@@ -1,0 +1,1385 @@
+  <!--Start of custom config-->
+  <!--Player count-->
+  <folder_arme name_arme="Player count" id_arme="2465ff82-1122-438a-8301-a378328f5289" />
+  <event name_arme="1 ship" id_arme="1be20c7f-5ac3-4778-adf3-5c81b7102e0d" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_variable name="Player Count" comparator="EQUALS" value="0.0" />
+    <if_exists name="Artemis" />
+    <set_difficulty_level value="1" />
+    <set_variable name="Player Count" value="1.0" />
+    <set_variable name="start" value="1.0" />
+  </event>
+  <event name_arme="2 ships" id_arme="d02a0277-7ea8-4b5c-8ed2-f157fced0f18" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_variable name="Player Count" comparator="EQUALS" value="1.0" />
+    <if_exists name="Intrepid" />
+    <set_difficulty_level value="1" />
+    <set_variable name="Player Count" value="2.0" />
+    <set_variable name="start" value="1.0" />
+  </event>
+  <event name_arme="Place ship 2" id_arme="755319df-60d0-4ce0-b10b-95632aeeac10" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_exists name="Intrepid" />
+    <if_variable name="start" comparator="EQUALS" value="1.0" />
+    <set_relative_position name2="Intrepid" distance="600" angle="240.0" name1="Artemis" />
+    <set_variable name="start" value="2.0" />
+  </event>
+  <event name_arme="3 ships" id_arme="3eb10cdb-e56f-4538-bce9-cbc6a90a9f63" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_variable name="Player Count" comparator="EQUALS" value="2.0" />
+    <if_exists name="Aegis" />
+    <set_difficulty_level value="1" />
+    <set_variable name="Player Count" value="3.0" />
+    <set_variable name="start" value="1.0" />
+  </event>
+  <event name_arme="Place ship 3" id_arme="66e7bb7f-b210-41be-b61a-98abe7f862cf" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_exists name="Aegis" />
+    <if_variable name="start" comparator="EQUALS" value="1.0" />
+    <set_relative_position name2="Aegis" distance="600" angle="200.0" name1="Artemis" />
+    <set_variable name="start" value="2.0" />
+  </event>
+  <event name_arme="4 ships" id_arme="1e5d0532-911d-4fb8-9fca-35a5332ddf85" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_variable name="Player Count" comparator="EQUALS" value="3.0" />
+    <if_exists name="Horatio" />
+    <set_difficulty_level value="1" />
+    <set_variable name="Player Count" value="4.0" />
+    <set_variable name="start" value="1.0" />
+  </event>
+  <event name_arme="Place ship 4" id_arme="49771fb2-c9cd-4f78-a753-aecfbe2c9777" parent_id_arme="2465ff82-1122-438a-8301-a378328f5289">
+    <if_exists name="Horatio" />
+    <if_variable name="start" comparator="EQUALS" value="1.0" />
+    <set_relative_position name2="Horatio" distance="600" angle="160.0" name1="Artemis" />
+    <set_variable name="start" value="2.0" />
+  </event>
+  <!--Damage control teams-->
+  <folder_arme name_arme="Damage control" id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257" />
+  <event name_arme="Team Alpha 6" id_arme="c0c65b81-dc52-4d6e-81ce-beca5fc90a65" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="5" />
+    <if_variable name="team0" comparator="EQUALS" value="0.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Cmdr. Feinberg, DamCon Alpha">This is Lt. Cmdr. Feinberg from DamCom Alpha, sir. ^We had a hard radiation burst down here, and it looks like Ensign Cobb got the worst of it. ^Sickbay has him now, but it doesn't look good.</incoming_comms_text>
+    <set_variable name="team0" value="1.0" />
+  </event>
+  <event name_arme="Team Alpha 5" id_arme="025c79e7-14e7-4c15-914d-39ae3c1aa56e" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="4" />
+    <if_variable name="team0" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Cmdr. Feinberg, DamCon Alpha">Lt. Cmdr. Feinberg here, sir. ^I regret to inform you that Cadet Mayweather died while manually overriding the deck's pressure doors. ^If not for her, none of us would have made it.</incoming_comms_text>
+    <set_variable name="team0" value="2.0" />
+  </event>
+  <event name_arme="Team Alpha 4" id_arme="a5dcc138-b695-490e-8c72-300baa483867" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="3" />
+    <if_variable name="team0" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Cmdr. Feinberg, DamCon Alpha">Lt. Cmdr. Feinberg here, sir. ^We've encountered a hull breach. ^Midshipman Fielding was... well, he's no longer aboard, sir.</incoming_comms_text>
+    <set_variable name="team0" value="3.0" />
+  </event>
+  <event name_arme="Team Alpha 3" id_arme="62ed92c7-aa1b-46df-b03d-e1bee512e00c" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="2" />
+    <if_variable name="team0" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Cmdr. Feinberg, DamCon Alpha">This is Lt. Cmdr. Feinberg, sir. ^We've got a coolant leak here that just froze Ensign Rogers solid. ^Poor kid shattered like a cheap Denubian crystal.</incoming_comms_text>
+    <set_variable name="team0" value="4.0" />
+  </event>
+  <event name_arme="Team Alpha 2" id_arme="0f16791e-056f-42a3-8ced-6cbd535fb1bf" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="1" />
+    <if_variable name="team0" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Cmdr. Feinberg, DamCon Alpha">Lt. Cmdr. Feinberg again, sir. ^Ensign Matthews just lost most of his skull when a panel overloaded. ^Tell sickbay not to hurry, poor guy never had a chance.</incoming_comms_text>
+    <set_variable name="team0" value="5.0" />
+  </event>
+  <event name_arme="Team Alpha 1" id_arme="3fbe5189-fec3-4b9c-b049-d830943d2ca0" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="0" />
+    <if_variable name="team0" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Cmdr. Feinberg, DamCon Alpha">Lt. Cmdr. Feinberg again, sir. ^I'm fairly confident I can get this conduit working without any problem whatsoev---*SIGNAL LOST*</incoming_comms_text>
+    <set_variable name="team0" value="6.0" />
+  </event>
+  <event name_arme="Team Beta 6" id_arme="011ab88f-a47b-4eb5-b095-5b6cb40e3559" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="5" />
+    <if_variable name="team1" comparator="EQUALS" value="0.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Jacoby, DamCom Beta">Lt. Jacoby from DamCom Beta reporting in, sir. ^That last explosion took out Crewman Caine. ^He was a bright kid with the whole universe in front of him. ^Earn him some payback, will you?</incoming_comms_text>
+    <set_variable name="team1" value="1.0" />
+  </event>
+  <event name_arme="Team Beta 5" id_arme="c1a5d141-0374-4fae-85c8-fce2f8a6ef3e" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="4" />
+    <if_variable name="team1" comparator="EQUALS" value="1.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Jacoby, DamCom Beta">This is Lt. Jacoby. ^I'm sorry to report that Lt. Jefferson volunteered to venture into the warp core to re-align the primary phase sequencers. ^He saved us all, sir, everyone but himself.</incoming_comms_text>
+    <set_variable name="team1" value="2.0" />
+  </event>
+  <event name_arme="Team Beta 4" id_arme="e992469f-5b5f-4d4d-a4ae-a148ec4614fd" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="3" />
+    <if_variable name="team1" comparator="EQUALS" value="2.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Jacoby, DamCom Beta">Lt. Jacoby to bridge. ^It's my sad duty to report that Midshipman Satai was lost during a failed attempt to restore the power grid on this deck. ^He'll be missed.</incoming_comms_text>
+    <set_variable name="team1" value="3.0" />
+  </event>
+  <event name_arme="Team Beta 3" id_arme="b22beeef-ef86-4500-bf80-4be8bf811ed2" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="2" />
+    <if_variable name="team1" comparator="EQUALS" value="3.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Jacoby, DamCom Beta">Lt. Jacoby here, sir. ^I'm sorry to report that Crewman Lo'ren was killed by falling debris. ^You can rest assured that my team will carry on in her honor, sir.</incoming_comms_text>
+    <set_variable name="team1" value="4.0" />
+  </event>
+  <event name_arme="Team Beta 2" id_arme="696a5cab-dded-44ec-8a59-687cd8907316" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="1" />
+    <if_variable name="team1" comparator="EQUALS" value="4.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Jacoby, DamCom Beta">Lt. Jacoby reporting in, sir. ^We just lost Crewman Clark to a subspace implosion while trying to enact repairs. ^That poor bastard was only two days away from retirement, too.</incoming_comms_text>
+    <set_variable name="team1" value="5.0" />
+  </event>
+  <event name_arme="Team Beta 1" id_arme="6578b3f7-8412-4ea5-a7c9-5c09b5621574" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_damcon_members team_index="0" comparator="EQUALS" value="0" />
+    <if_variable name="team1" comparator="EQUALS" value="5.0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Jacoby, DamCom Beta">This is Lt. Jacoby, sir. ^I'm beginning my repairs on the damaged area now. ^Hey, that wire's not supposed to be---*SIGNAL LOST*</incoming_comms_text>
+    <set_variable name="team1" value="6.0" />
+  </event>
+  <event name_arme="Team Delta 6" id_arme="a8d7517a-7988-4324-830d-9235ecf83334" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_variable name="team2" comparator="EQUALS" value="0.0" />
+    <if_damcon_members team_index="2" comparator="EQUALS" value="5" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Frost, DamCom Delta">This Lt. Frost from DamCom Delta, sir. ^That last blast caused some kinda subspace harmonic shockwave. ^It caught Lt. Nichols dead center. ^For what it's worth, I don't think she felt anything when it happened.</incoming_comms_text>
+    <warning_popup_message message="This Lt. Frost from DamCom Delta, sir. That last blast caused some kinda subspace harmonic shockwave. It caught Lt. Nichols dead center. For what it's worth, I don't think she felt anything when it happened." consoles="E" />
+    <set_variable name="team2" value="1.0" />
+  </event>
+  <event name_arme="Team Delta 5" id_arme="288720d1-3943-47a9-aa84-95134226d57f" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_variable name="team2" comparator="EQUALS" value="1.0" />
+    <if_damcon_members team_index="2" comparator="EQUALS" value="4" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Frost, DamCom Delta">This is Lt. Frost. ^I'm sorry to report that Cadet Pierre was re-constituting the primary phase buffers when they overloaded. There's... not a lot of him left, sir. Thankfully.</incoming_comms_text>
+    <set_variable name="team2" value="2.0" />
+  </event>
+  <event name_arme="Team Delta 4" id_arme="f979e158-72cc-4324-b02c-85df516ee92f" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_variable name="team2" comparator="EQUALS" value="2.0" />
+    <if_damcon_members team_index="2" comparator="EQUALS" value="3" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Frost, DamCom Delta">Lt. Frost to bridge. ^Ensign Morgan was unfortunately killed in the line of duty.</incoming_comms_text>
+    <set_variable name="team2" value="3.0" />
+  </event>
+  <event name_arme="Team Delta 3" id_arme="bfc07b64-0234-4526-a3e0-304a0505c576" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_variable name="team2" comparator="EQUALS" value="3.0" />
+    <if_damcon_members team_index="2" comparator="EQUALS" value="2" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Frost, DamCom Delta">Lt. Frost here, sir. ^We lost Ensign N'Gert while trying to contain a plasma fire. ^It should be noted that his actions probably saved the entire deck.</incoming_comms_text>
+    <set_variable name="team2" value="4.0" />
+  </event>
+  <event name_arme="Team Delta 2" id_arme="f8145422-f462-44a2-a36f-669956d3b71d" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_variable name="team2" comparator="EQUALS" value="4.0" />
+    <if_damcon_members team_index="2" comparator="EQUALS" value="1" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Frost, DamCom Delta">This is Lt. Frost, sir. ^This section of the deck depressurized, and unfortunately, Lt. Myers was on the wrong side of the pressure doors.</incoming_comms_text>
+    <set_variable name="team2" value="5.0" />
+  </event>
+  <event name_arme="Team Delta 1" id_arme="1fcde1cf-9f77-4f90-b201-ba9adf7772e1" parent_id_arme="dfa9789f-36c4-4846-9cf6-95b274c12257">
+    <if_variable name="team2" comparator="EQUALS" value="5.0" />
+    <if_damcon_members team_index="2" comparator="EQUALS" value="0" />
+    <warning_popup_message message="Incoming transmission from Engineering" consoles="EC" />
+    <incoming_comms_text from="Lt. Frost, DamCom Delta">Lt. Frost reporting in, sir. ^I've managed to isolate the array buffer, so now all I need to do is simply connec---*SIGNAL LOST*</incoming_comms_text>
+    <set_variable name="team2" value="6.0" />
+  </event>
+  <!--Shuttles-->
+  <folder_arme name_arme="Shuttles" id_arme="a109da74-42ce-43d9-9140-0670fa9b822a" expanded_arme="" />
+  <folder_arme name_arme="Artemis Shuttles" id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2" parent_id_arme="a109da74-42ce-43d9-9140-0670fa9b822a" expanded_arme="" />
+  <event name_arme="Ready Shuttle 1" id_arme="85db61da-ba21-474b-b62a-c779c3a951d8" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_client_key value="97" />
+    <if_variable name="Artemis shuttle 1 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Artemis Shuttle 1" />
+    <if_variable name="Artemis Shuttle 1 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Artemis Shuttle 1 ready" seconds="20" />
+    <set_variable name="Artemis shuttle 1 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Morris ">Prepping Shuttle one now Bridge.</incoming_comms_text>
+  </event>
+  <event name_arme="Shuttle 1 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_timer_finished name="Artemis Shuttle 1 ready" />
+    <if_not_exists name="Artemis Shuttle 1" />
+    <if_variable name="Artemis shuttle 1 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Morris">Shuttle one is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Artemis shuttle 1 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch Shuttle 1" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_variable name="Artemis shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="1" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Artemis Shuttle 1" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Artemis Shuttle 1" distance="20" angle="180.0" name1="Artemis" />
+    <clear_ai name="Artemis Shuttle 1" />
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.1" name="Artemis Shuttle 1" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Artemis Shuttle 1" />
+    <incoming_comms_text from="Lieutenant Morris">Launching Shuttle one!</incoming_comms_text>
+    <set_timer name="Artemis-shuttle1-recall" seconds="2" />
+    <set_variable name="Artemis shuttle 1 ready" value="3.0" />
+    <set_variable name="Artemis shuttle 1 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 1" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_exists name="Artemis Shuttle 1" />
+    <if_variable name="Artemis shuttle 1 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="1" />
+    <if_variable name="Artemis shuttle 1 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Artemis-shuttle1-recall" />
+    <clear_ai name="Artemis Shuttle 1" />
+    <incoming_comms_text from="Lieutenant Morris">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.89" name="Artemis Shuttle 1" />
+    <set_variable name="Artemis shuttle 1 recall" value="1.0" />
+  </event>
+  <event name_arme="Shuttle 1 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_distance name1="Artemis Shuttle 1" name2="Artemis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Artemis shuttle 1 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Morris">Shuttle one coming into land.</incoming_comms_text>
+    <destroy name="Artemis Shuttle 1" />
+    <set_variable name="Artemis shuttle 1 recall" value="2.0" />
+    <set_variable name="Artemis shuttle 1 ready" value="0.0" />
+  </event>
+  <event name_arme="Shuttle 1 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_variable name="Artemis shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Artemis Shuttle 1" />
+    <if_timer_finished name="Artemis-shuttle1-recall" />
+    <set_variable name="Artemis Shuttle 1 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Morris">Bri... We have ta.... ...age! Sys.... offline, requ... ...gency beam o... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 2" id_arme="cf32f70e-0617-4463-a0db-79d0fc78ab85" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_client_key keyText="2" />
+    <if_variable name="Artemis shuttle 2 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Artemis Shuttle 2" />
+    <if_variable name="Artemis Shuttle 2 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Artemis Shuttle 2 ready" seconds="20" />
+    <set_variable name="Artemis shuttle 2 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">Bridge, We are prepping Shuttle two for launch.</incoming_comms_text>
+  </event>
+  <event name_arme="Shuttle 2 prepped" id_arme="c99bed13-6cac-428e-b61c-23d9792298ce" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_timer_finished name="Artemis Shuttle 2 ready" />
+    <if_not_exists name="Artemis Shuttle 2" />
+    <if_variable name="Artemis shuttle 2 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">Bridge, this is shuttle two. We are ready to launch.</incoming_comms_text>
+    <set_variable name="Artemis shuttle 2 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch Shuttle 2" id_arme="2464abde-70b7-4ef2-b2d0-58c1718328f7" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_variable name="Artemis shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="2" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Artemis Shuttle 2" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Artemis Shuttle 2" distance="20" angle="180.0" name1="Artemis" />
+    <clear_ai name="Artemis Shuttle 2" />
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.1" name="Artemis Shuttle 2" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Artemis Shuttle 2" />
+    <incoming_comms_text from="Lieutenant Drax">Shuttle two away!</incoming_comms_text>
+    <set_timer name="Artemis-shuttle2-recall" seconds="2" />
+    <set_variable name="Artemis shuttle 2 ready" value="3.0" />
+    <set_variable name="Artemis shuttle 2 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 2" id_arme="13de8788-0e36-45c0-b9ec-4bea37e32e42" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_exists name="Artemis Shuttle 2" />
+    <if_variable name="Artemis shuttle 2 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="2" />
+    <if_variable name="Artemis shuttle 2 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Artemis-shuttle2-recall" />
+    <clear_ai name="Artemis Shuttle 2" />
+    <incoming_comms_text from="Lieutenant Drax">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.89" name="Artemis Shuttle 2" />
+    <set_variable name="Artemis shuttle 2 recall" value="1.0" />
+  </event>
+  <event name_arme="Shuttle 2 dock" id_arme="9fecc8f9-f10e-4c5c-a2d7-8b01a01324fa" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_distance name1="Artemis Shuttle 2" name2="Artemis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Artemis shuttle 2 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">Shuttle two approaching hanger bay.</incoming_comms_text>
+    <destroy name="Artemis Shuttle 2" />
+    <set_variable name="Artemis shuttle 2 recall" value="2.0" />
+    <set_variable name="Artemis shuttle 2 ready" value="0.0" />
+  </event>
+  <event name_arme="Shuttle 2 destroyed" id_arme="68bcaf19-e963-4be2-aef0-68317fa70aff" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_variable name="Artemis shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Artemis Shuttle 2" />
+    <if_timer_finished name="Artemis-shuttle2-recall" />
+    <set_variable name="Artemis Shuttle 2 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">He... We a.. ..king he... dama.. reqe.... ...iate trans.... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 3" id_arme="cef29d94-758e-4071-8e9a-20f0de037669" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_client_key keyText="3" />
+    <if_variable name="Artemis shuttle 3 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Artemis Shuttle 3" />
+    <if_variable name="Artemis Shuttle 3 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Artemis Shuttle 3 ready" seconds="20" />
+    <set_variable name="Artemis shuttle 3 ready" value="1.0" />
+    <incoming_comms_text from="Ensign Pravi">Bridge, we are getting Shuttle three ready to launch.</incoming_comms_text>
+  </event>
+  <event name_arme="Shuttle 3 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_timer_finished name="Artemis Shuttle 3 ready" />
+    <if_not_exists name="Artemis Shuttle 3" />
+    <if_variable name="Artemis shuttle 3 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Pravi">Shuttle three is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Artemis shuttle 3 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch Shuttle 3" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_variable name="Artemis shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="3" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Artemis Shuttle 3" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Artemis Shuttle 3" distance="20" angle="180.0" name1="Artemis" />
+    <clear_ai name="Artemis Shuttle 3" />
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.1" name="Artemis Shuttle 3" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Artemis Shuttle 3" />
+    <incoming_comms_text from="Ensign Pravi">Shuttle three away!</incoming_comms_text>
+    <set_timer name="Artemis-shuttle3-recall" seconds="2" />
+    <set_variable name="Artemis shuttle 3 ready" value="3.0" />
+    <set_variable name="Artemis shuttle 3 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 3" id_arme="5f048d49-2888-45b0-ab0f-10f495dac7fe" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_exists name="Artemis Shuttle 3" />
+    <if_variable name="Artemis shuttle 3 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="3" />
+    <if_variable name="Artemis shuttle 3 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Artemis-shuttle3-recall" />
+    <clear_ai name="Artemis Shuttle 3" />
+    <incoming_comms_text from="Ensign Pravi">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.89" name="Artemis Shuttle 3" />
+    <set_variable name="Artemis shuttle 3 recall" value="1.0" />
+  </event>
+  <event name_arme="Shuttle 3 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_distance name1="Artemis Shuttle 3" name2="Artemis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Artemis shuttle 3 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Pravi">Bridge, we've landed..</incoming_comms_text>
+    <destroy name="Artemis Shuttle 3" />
+    <set_variable name="Artemis shuttle 3 recall" value="2.0" />
+    <set_variable name="Artemis shuttle 3 ready" value="0.0" />
+  </event>
+  <event name_arme="Shuttle 3 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_variable name="Artemis shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Artemis Shuttle 3" />
+    <if_timer_finished name="Artemis-shuttle3-recall" />
+    <set_variable name="Artemis Shuttle 3 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign Pravi">Sys.... off.... we hav.. .. power. Lie.. supp... fail... ple... ...am .. out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 4" id_arme="dd1ecba9-470f-4154-899e-8b5df467d451" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_client_key keyText="4" />
+    <if_variable name="Artemis shuttle 4 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Artemis Shuttle 4" />
+    <if_variable name="Artemis Shuttle 4 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Artemis Shuttle 4 ready" seconds="20" />
+    <set_variable name="Artemis shuttle 4 ready" value="1.0" />
+    <incoming_comms_text from="Ensign McArthur">Prepping Shuttle four for launch.</incoming_comms_text>
+  </event>
+  <event name_arme="Shuttle 4 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_timer_finished name="Artemis Shuttle 4 ready" />
+    <if_not_exists name="Artemis Shuttle 4" />
+    <if_variable name="Artemis shuttle 4 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign McArthur">Bridge, shuttle four is ready to go on your command.</incoming_comms_text>
+    <set_variable name="Artemis shuttle 4 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch Shuttle 4" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_variable name="Artemis shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="4" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Artemis Shuttle 4" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Artemis Shuttle 4" distance="20" angle="180.0" name1="Artemis" />
+    <clear_ai name="Artemis Shuttle 4" />
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.1" name="Artemis Shuttle 4" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Artemis Shuttle 4" />
+    <incoming_comms_text from="Ensign McArthur">Shuttle four has cleared hanger doors.</incoming_comms_text>
+    <set_timer name="Artemis-shuttle4-recall" seconds="2" />
+    <set_variable name="Artemis shuttle 4 ready" value="3.0" />
+    <set_variable name="Artemis shuttle 4 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 4" id_arme="0dad65b7-c84c-48ec-8dff-7f0c3ff98257" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_exists name="Artemis Shuttle 4" />
+    <if_variable name="Artemis shuttle 4 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="4" />
+    <if_variable name="Artemis shuttle 4 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Artemis-shuttle4-recall" />
+    <clear_ai name="Artemis Shuttle 4" />
+    <incoming_comms_text from="Ensign McArthur">Roger Bridge, we are heading back.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.89" name="Artemis Shuttle 4" />
+    <set_variable name="Artemis shuttle 4 recall" value="1.0" />
+  </event>
+  <event name_arme="Shuttle 4 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_distance name1="Artemis Shuttle 4" name2="Artemis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Artemis shuttle 4 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign McArthur">Bridge, we're on the deck.</incoming_comms_text>
+    <destroy name="Artemis Shuttle 4" />
+    <set_variable name="Artemis shuttle 4 recall" value="2.0" />
+    <set_variable name="Artemis shuttle 4 ready" value="0.0" />
+  </event>
+  <event name_arme="Shuttle 4 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_variable name="Artemis shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Artemis Shuttle 4" />
+    <if_timer_finished name="Artemis-shuttle4-recall" />
+    <set_variable name="Artemis Shuttle 4 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign McArthur">May... ...day, we ha... lo... a.. wer. Emer... ... out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 5" id_arme="4b1b4ea5-2f6a-460d-8b9d-9fcb40d55fe1" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_client_key keyText="5" />
+    <if_variable name="Artemis shuttle 5 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Artemis Shuttle 5" />
+    <if_variable name="Artemis Shuttle 5 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Artemis Shuttle 5 ready" seconds="20" />
+    <set_variable name="Artemis shuttle 5 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Goldman">Bridge, we are bringing Shuttle five online.</incoming_comms_text>
+  </event>
+  <event name_arme="Shuttle 5 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_timer_finished name="Artemis Shuttle 5 ready" />
+    <if_not_exists name="Artemis Shuttle 5" />
+    <if_variable name="Artemis shuttle 5 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Goldman">Bridge, shuttle five is ready to launch.</incoming_comms_text>
+    <set_variable name="Artemis shuttle 5 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch Shuttle 5" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_variable name="Artemis shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="5" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Artemis Shuttle 5" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Artemis Shuttle 5" distance="20" angle="180.0" name1="Artemis" />
+    <clear_ai name="Artemis Shuttle 5" />
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.1" name="Artemis Shuttle 5" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Artemis Shuttle 5" />
+    <incoming_comms_text from="Lieutenant Goldman">Shuttle five is away.</incoming_comms_text>
+    <set_timer name="Artemis-shuttle5-recall" seconds="2" />
+    <set_variable name="Artemis shuttle 5 ready" value="3.0" />
+    <set_variable name="Artemis shuttle 5 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 5" id_arme="6b4cf73c-4a2f-45bd-9321-8ab0e1019e9b" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_exists name="Artemis Shuttle 5" />
+    <if_variable name="Artemis shuttle 5 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="5" />
+    <if_variable name="Artemis shuttle 5 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Artemis-shuttle5-recall" />
+    <clear_ai name="Artemis Shuttle 5" />
+    <incoming_comms_text from="Lieutenant Goldman">On our way back to the ship..</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Artemis" value1="0.89" name="Artemis Shuttle 5" />
+    <set_variable name="Artemis shuttle 5 recall" value="1.0" />
+  </event>
+  <event name_arme="Shuttle 5 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_exists name="Artemis" />
+    <if_distance name1="Artemis Shuttle 5" name2="Artemis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Artemis shuttle 5 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Goldman">Bridge, we're back on the ship.</incoming_comms_text>
+    <destroy name="Artemis Shuttle 5" />
+    <set_variable name="Artemis shuttle 5 recall" value="2.0" />
+    <set_variable name="Artemis shuttle 5 ready" value="0.0" />
+  </event>
+  <event name_arme="Shuttle 5 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="7fb4b7d4-72cc-4fc2-a0c2-e753756344b2">
+    <if_variable name="Artemis shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Artemis Shuttle 5" />
+    <if_timer_finished name="Artemis-shuttle5-recall" />
+    <set_variable name="Artemis Shuttle 5 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Goldman">Brid... we... ...en dama.. Requ.... emerge... .eam out.. *signal lost*</incoming_comms_text>
+  </event>
+  <folder_arme name_arme="Intrepid Shuttles" id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2" parent_id_arme="a109da74-42ce-43d9-9140-0670fa9b822a" />
+  <event name_arme="Ready Shuttle 1" id_arme="939e8f7a-745a-4b83-b82a-f8376fc61189" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_client_key keyText="1" />
+    <if_variable name="Intrepid shuttle 1 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Intrepid Shuttle 1" />
+    <if_variable name="Intrepid Shuttle 1 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Intrepid Shuttle 1 ready" seconds="20" />
+    <set_variable name="Intrepid shuttle 1 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Coombs">Prepping Shuttle one now Bridge.</incoming_comms_text>
+  </event>
+  <event name_arme="Shuttle 1 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_timer_finished name="Intrepid Shuttle 1 ready" />
+    <if_not_exists name="Intrepid Shuttle 1" />
+    <if_variable name="Intrepid shuttle 1 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">Shuttle one is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Intrepid shuttle 1 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch Shuttle 1" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_variable name="Intrepid shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="1" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Intrepid Shuttle 1" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Intrepid Shuttle 1" distance="20" angle="180.0" name1="Intrepid" />
+    <clear_ai name="Intrepid Shuttle 1" />
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.1" name="Intrepid Shuttle 1" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Intrepid Shuttle 1" />
+    <incoming_comms_text from="Lieutenant Drax">Launching Shuttle one!</incoming_comms_text>
+    <set_timer name="Intrepid-shuttle1-recall" seconds="2" />
+    <set_variable name="Intrepid shuttle 1 ready" value="3.0" />
+    <set_variable name="Intrepid shuttle 1 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 1" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_exists name="Intrepid Shuttle 1" />
+    <if_variable name="Intrepid shuttle 1 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="1" />
+    <if_variable name="Intrepid shuttle 1 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <clear_ai name="Intrepid Shuttle 1" />
+    <incoming_comms_text from="Lieutenant Drax">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.89" name="Intrepid Shuttle 1" />
+    <set_variable name="Intrepid shuttle 1 recall" value="1.0" />
+  </event>
+  <event name_arme="Shuttle 1 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_distance name1="Intrepid Shuttle 1" name2="Intrepid" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Intrepid shuttle 1 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">Shuttle one coming into land.</incoming_comms_text>
+    <destroy name="Intrepid Shuttle 1" />
+    <set_variable name="Intrepid shuttle 1 recall" value="2.0" />
+    <set_variable name="Intrepid shuttle 1 ready" value="0.0" />
+  </event>
+  <event name_arme="Shuttle 1 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_variable name="Intrepid shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Intrepid Shuttle 1" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <set_variable name="Intrepid Shuttle 1 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Drax">Bri... We have ta.... ...age! Sys.... offline, requ... ...gency beam o... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 2" id_arme="65f7f3af-a12c-4510-a7d8-07ecd4c1ad80" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_client_key keyText="2" />
+    <if_variable name="Intrepid shuttle 2 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Intrepid Shuttle 2" />
+    <if_variable name="Intrepid shuttle 2 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Intrepid Shuttle 2 ready" seconds="20" />
+    <set_variable name="Intrepid shuttle 2 ready" value="1.0" />
+    <incoming_comms_text from="Ensign Jackson">Bridge, this is shuttle two. We are ready to launch.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 2 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_timer_finished name="Intrepid shuttle 2 ready" />
+    <if_not_exists name="Intrepid shuttle 2" />
+    <if_variable name="Intrepid shuttle 2 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Jackson">Shuttle two is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Intrepid shuttle 2 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 2" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_variable name="Intrepid shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="2" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Intrepid shuttle 2" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Intrepid shuttle 2" distance="20" angle="180.0" name1="Intrepid" />
+    <clear_ai name="Intrepid shuttle 2" />
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.1" name="Intrepid shuttle 2" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Intrepid shuttle 2" />
+    <incoming_comms_text from="Ensign Jackson">Shuttle two away!</incoming_comms_text>
+    <set_timer name="Intrepid-shuttle1-recall" seconds="2" />
+    <set_variable name="Intrepid shuttle 2 ready" value="3.0" />
+    <set_variable name="Intrepid shuttle 2 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 2" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_exists name="Intrepid shuttle 2" />
+    <if_variable name="Intrepid shuttle 2 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="2" />
+    <if_variable name="Intrepid shuttle 2 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <clear_ai name="Intrepid shuttle 2" />
+    <incoming_comms_text from="Ensign Jackson">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.89" name="Intrepid shuttle 2" />
+    <set_variable name="Intrepid shuttle 2 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 2 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_distance name1="Intrepid shuttle 2" name2="Intrepid" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Intrepid shuttle 2 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Jackson">Shuttle two approaching hanger bay.</incoming_comms_text>
+    <destroy name="Intrepid shuttle 2" />
+    <set_variable name="Intrepid shuttle 2 recall" value="2.0" />
+    <set_variable name="Intrepid shuttle 2 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 2 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_variable name="Intrepid shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Intrepid shuttle 2" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <set_variable name="Intrepid shuttle 2 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign Jackson">He... We a.. ..king he... dama.. reqe.... ...iate trans.... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 3" id_arme="c175f38d-9bc0-4fe7-a958-1904eaa38371" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_client_key keyText="3" />
+    <if_variable name="Intrepid shuttle 3 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Intrepid Shuttle 3" />
+    <if_variable name="Intrepid shuttle 3 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Intrepid Shuttle 3 ready" seconds="20" />
+    <set_variable name="Intrepid shuttle 3 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sanderson">Shuttle three preparing for launch</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 3 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_timer_finished name="Intrepid shuttle 3 ready" />
+    <if_not_exists name="Intrepid shuttle 3" />
+    <if_variable name="Intrepid shuttle 3 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sanderson">Shuttle three is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Intrepid shuttle 3 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 3" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_variable name="Intrepid shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="3" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Intrepid shuttle 3" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Intrepid shuttle 3" distance="20" angle="180.0" name1="Intrepid" />
+    <clear_ai name="Intrepid shuttle 3" />
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.1" name="Intrepid shuttle 3" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Intrepid shuttle 3" />
+    <incoming_comms_text from="Lieutenant Sanderson">Shuttle three away!</incoming_comms_text>
+    <set_timer name="Intrepid-shuttle1-recall" seconds="2" />
+    <set_variable name="Intrepid shuttle 3 ready" value="3.0" />
+    <set_variable name="Intrepid shuttle 3 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 3" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_exists name="Intrepid shuttle 3" />
+    <if_variable name="Intrepid shuttle 3 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="3" />
+    <if_variable name="Intrepid shuttle 3 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <clear_ai name="Intrepid shuttle 3" />
+    <incoming_comms_text from="Lieutenant Sanderson">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.89" name="Intrepid shuttle 3" />
+    <set_variable name="Intrepid shuttle 3 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 3 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_distance name1="Intrepid shuttle 3" name2="Intrepid" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Intrepid shuttle 3 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sanderson">Bridge, we've landed..</incoming_comms_text>
+    <destroy name="Intrepid shuttle 3" />
+    <set_variable name="Intrepid shuttle 3 recall" value="2.0" />
+    <set_variable name="Intrepid shuttle 3 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 3 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_variable name="Intrepid shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Intrepid shuttle 3" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <set_variable name="Intrepid shuttle 3 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sanderson">Sys.... off.... we hav.. .. power. Lie.. supp... fail... ple... ...am .. out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 4" id_arme="ea455e6e-3bdf-4b62-89e2-dfc3844cc71c" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_client_key keyText="4" />
+    <if_variable name="Intrepid shuttle 4 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Intrepid Shuttle 4" />
+    <if_variable name="Intrepid shuttle 4 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Intrepid Shuttle 4 ready" seconds="20" />
+    <set_variable name="Intrepid shuttle 4 ready" value="1.0" />
+    <incoming_comms_text from="Ensign Tweedy">Bridge, we are bringing shuttle four online now.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 4 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_timer_finished name="Intrepid shuttle 4 ready" />
+    <if_not_exists name="Intrepid shuttle 4" />
+    <if_variable name="Intrepid shuttle 4 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Tweedy">Bridge, shuttle four is ready to go on your command.</incoming_comms_text>
+    <set_variable name="Intrepid shuttle 4 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 4" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_variable name="Intrepid shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="4" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Intrepid shuttle 4" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Intrepid shuttle 4" distance="20" angle="180.0" name1="Intrepid" />
+    <clear_ai name="Intrepid shuttle 4" />
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.1" name="Intrepid shuttle 4" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Intrepid shuttle 4" />
+    <incoming_comms_text from="Ensign Tweedy">Shuttle four has cleared hanger doors.</incoming_comms_text>
+    <set_timer name="Intrepid-shuttle1-recall" seconds="2" />
+    <set_variable name="Intrepid shuttle 4 ready" value="3.0" />
+    <set_variable name="Intrepid shuttle 4 recall" value="0.0" />
+  </event>
+  <event name_arme="shuttle 4 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_distance name1="Intrepid shuttle 4" name2="Intrepid" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Intrepid shuttle 4 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Tweedy">Shuttle four coming into land.</incoming_comms_text>
+    <destroy name="Intrepid shuttle 4" />
+    <set_variable name="Intrepid shuttle 4 recall" value="2.0" />
+    <set_variable name="Intrepid shuttle 4 ready" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 4" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_exists name="Intrepid shuttle 4" />
+    <if_variable name="Intrepid shuttle 4 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="4" />
+    <if_variable name="Intrepid shuttle 4 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <clear_ai name="Intrepid shuttle 4" />
+    <incoming_comms_text from="Ensign Tweedy">Roger Bridge, we are heading back.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.89" name="Intrepid shuttle 4" />
+    <set_variable name="Intrepid shuttle 4 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 4 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_variable name="Intrepid shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Intrepid shuttle 4" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <set_variable name="Intrepid shuttle 4 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign Tweedy">May... ...day, we ha... lo... a.. wer. Emer... ... out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 5" id_arme="f0e8f032-5468-4ef4-813e-b5dbe021d445" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_client_key keyText="P" />
+    <if_variable name="Intrepid shuttle 5 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Intrepid Shuttle 5" />
+    <if_variable name="Intrepid shuttle 5 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Intrepid Shuttle 5 ready" seconds="20" />
+    <set_variable name="Intrepid shuttle 5 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sparrow">Bridge, shuttle five coming online.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 5 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_timer_finished name="Intrepid shuttle 5 ready" />
+    <if_not_exists name="Intrepid shuttle 5" />
+    <if_variable name="Intrepid shuttle 5 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sparrow">Bridge, shuttle five is ready to launch.</incoming_comms_text>
+    <set_variable name="Intrepid shuttle 5 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 5" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_variable name="Intrepid shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="4" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Intrepid shuttle 5" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Intrepid shuttle 5" distance="20" angle="180.0" name1="Intrepid" />
+    <clear_ai name="Intrepid shuttle 5" />
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.1" name="Intrepid shuttle 5" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Intrepid shuttle 5" />
+    <incoming_comms_text from="Lieutenant Sparrow">Shuttle five is away.</incoming_comms_text>
+    <set_timer name="Intrepid-shuttle1-recall" seconds="2" />
+    <set_variable name="Intrepid shuttle 5 ready" value="3.0" />
+    <set_variable name="Intrepid shuttle 5 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 5" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_exists name="Intrepid shuttle 5" />
+    <if_variable name="Intrepid shuttle 5 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="4" />
+    <if_variable name="Intrepid shuttle 5 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <clear_ai name="Intrepid shuttle 5" />
+    <incoming_comms_text from="Lieutenant Sparrow">On our way back to the ship..</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Intrepid" value1="0.89" name="Intrepid shuttle 5" />
+    <set_variable name="Intrepid shuttle 5 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 5 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_exists name="Intrepid" />
+    <if_distance name1="Intrepid shuttle 5" name2="Intrepid" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Intrepid shuttle 5 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sparrow">Bridge, we're back on the ship.</incoming_comms_text>
+    <destroy name="Intrepid shuttle 5" />
+    <set_variable name="Intrepid shuttle 5 recall" value="2.0" />
+    <set_variable name="Intrepid shuttle 5 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 5 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6c177d34-5b3b-4f40-b024-5376b7e685c2">
+    <if_variable name="Intrepid shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Intrepid shuttle 5" />
+    <if_timer_finished name="Intrepid-shuttle1-recall" />
+    <set_variable name="Intrepid shuttle 5 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Sparrow">Brid... we... ...en dama.. Requ.... emerge... .eam out.. *signal lost*</incoming_comms_text>
+  </event>
+  <folder_arme name_arme="Aegis Shuttles" id_arme="f7f7354a-286e-444e-aa40-56a821563098" parent_id_arme="a109da74-42ce-43d9-9140-0670fa9b822a" />
+  <event name_arme="Ready Shuttle 1" id_arme="68b9e134-fb32-4136-ad77-62f916520e33" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_client_key keyText="1" />
+    <if_variable name="Aegis shuttle 1 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Aegis Shuttle 1" />
+    <if_variable name="Aegis shuttle 1 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Aegis Shuttle 1 ready" seconds="20" />
+    <set_variable name="Aegis shuttle 1 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Yanovich">Bridge, shuttle one is being brought to flight readiness.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 1 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_timer_finished name="Aegis shuttle 1 ready" />
+    <if_not_exists name="Aegis shuttle 1" />
+    <if_variable name="Aegis shuttle 1 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Yanovich">Shuttle one is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Aegis shuttle 1 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 1" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_variable name="Aegis shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="1" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Aegis shuttle 1" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Aegis shuttle 1" distance="20" angle="180.0" name1="Aegis" />
+    <clear_ai name="Aegis shuttle 1" />
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.1" name="Aegis shuttle 1" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Aegis shuttle 1" />
+    <incoming_comms_text from="Lieutenant Yanovich">Launching Shuttle one!</incoming_comms_text>
+    <set_timer name="Aegis-shuttle1-recall" seconds="2" />
+    <set_variable name="Aegis shuttle 1 ready" value="3.0" />
+    <set_variable name="Aegis shuttle 1 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 1" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_exists name="Aegis shuttle 1" />
+    <if_variable name="Aegis shuttle 1 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="1" />
+    <if_variable name="Aegis shuttle 1 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <clear_ai name="Aegis shuttle 1" />
+    <incoming_comms_text from="Lieutenant Yanovich">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.89" name="Aegis shuttle 1" />
+    <set_variable name="Aegis shuttle 1 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 1 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_distance name1="Aegis shuttle 1" name2="Aegis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Aegis shuttle 1 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Yanovich">Shuttle one coming into land.</incoming_comms_text>
+    <destroy name="Aegis shuttle 1" />
+    <set_variable name="Aegis shuttle 1 recall" value="2.0" />
+    <set_variable name="Aegis shuttle 1 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 1 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_variable name="Aegis shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Aegis shuttle 1" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <set_variable name="Aegis shuttle 1 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Yanovich">Bri... We have ta.... ...age! Sys.... offline, requ... ...gency beam o... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 2" id_arme="58d53430-f409-414a-b7bd-49e1e5284826" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_client_key keyText="2" />
+    <if_variable name="Aegis shuttle 2 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Aegis Shuttle 2" />
+    <if_variable name="Aegis shuttle 2 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Aegis Shuttle 2 ready" seconds="20" />
+    <set_variable name="Aegis shuttle 2 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Cooper">Shuttle two coming online.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 2 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_timer_finished name="Aegis shuttle 2 ready" />
+    <if_not_exists name="Aegis shuttle 2" />
+    <if_variable name="Aegis shuttle 2 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Cooper">Shuttle two is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Aegis shuttle 2 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 2" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_variable name="Aegis shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="2" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Aegis shuttle 2" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Aegis shuttle 2" distance="20" angle="180.0" name1="Aegis" />
+    <clear_ai name="Aegis shuttle 2" />
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.1" name="Aegis shuttle 2" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Aegis shuttle 2" />
+    <incoming_comms_text from="Lieutenant Cooper">Shuttle two away!</incoming_comms_text>
+    <set_timer name="Aegis-shuttle1-recall" seconds="2" />
+    <set_variable name="Aegis shuttle 2 ready" value="3.0" />
+    <set_variable name="Aegis shuttle 2 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 2" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_exists name="Aegis shuttle 2" />
+    <if_variable name="Aegis shuttle 2 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="2" />
+    <if_variable name="Aegis shuttle 2 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <clear_ai name="Aegis shuttle 2" />
+    <incoming_comms_text from="Lieutenant Cooper">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.89" name="Aegis shuttle 2" />
+    <set_variable name="Aegis shuttle 2 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 2 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_distance name1="Aegis shuttle 2" name2="Aegis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Aegis shuttle 2 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Cooper">Shuttle two approaching hanger bay.</incoming_comms_text>
+    <destroy name="Aegis shuttle 2" />
+    <set_variable name="Aegis shuttle 2 recall" value="2.0" />
+    <set_variable name="Aegis shuttle 2 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 2 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_variable name="Aegis shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Aegis shuttle 2" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <set_variable name="Aegis shuttle 2 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Cooper">He... We a.. ..king he... dama.. reqe.... ...iate trans.... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 3" id_arme="a2bb026a-bbee-43c7-bca2-34c891896625" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_client_key keyText="3" />
+    <if_variable name="Aegis shuttle 3 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Aegis Shuttle 3" />
+    <if_variable name="Aegis shuttle 3 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Aegis Shuttle 3 ready" seconds="20" />
+    <set_variable name="Aegis shuttle 3 ready" value="1.0" />
+    <incoming_comms_text from="Ensign Petrovich">Bridge, shuttle three coming online.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 3 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_timer_finished name="Aegis shuttle 3 ready" />
+    <if_not_exists name="Aegis shuttle 3" />
+    <if_variable name="Aegis shuttle 3 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Petrovich">Shuttle three is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Aegis shuttle 3 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 3" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_variable name="Aegis shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="3" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Aegis shuttle 3" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Aegis shuttle 3" distance="20" angle="180.0" name1="Aegis" />
+    <clear_ai name="Aegis shuttle 3" />
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.1" name="Aegis shuttle 3" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Aegis shuttle 3" />
+    <incoming_comms_text from="Ensign Petrovich">Shuttle three away!</incoming_comms_text>
+    <set_timer name="Aegis-shuttle1-recall" seconds="2" />
+    <set_variable name="Aegis shuttle 3 ready" value="3.0" />
+    <set_variable name="Aegis shuttle 3 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 3" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_exists name="Aegis shuttle 3" />
+    <if_variable name="Aegis shuttle 3 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="3" />
+    <if_variable name="Aegis shuttle 3 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <clear_ai name="Aegis shuttle 3" />
+    <incoming_comms_text from="Ensign Petrovich">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.89" name="Aegis shuttle 3" />
+    <set_variable name="Aegis shuttle 3 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 3 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_distance name1="Aegis shuttle 3" name2="Aegis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Aegis shuttle 3 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Petrovich">Bridge, we've landed..</incoming_comms_text>
+    <destroy name="Aegis shuttle 3" />
+    <set_variable name="Aegis shuttle 3 recall" value="2.0" />
+    <set_variable name="Aegis shuttle 3 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 3 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_variable name="Aegis shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Aegis shuttle 3" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <set_variable name="Aegis shuttle 3 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign Petrovich">Sys.... off.... we hav.. .. power. Lie.. supp... fail... ple... ...am .. out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 4" id_arme="764533e8-f5a5-48ba-a83a-aadf3aed881f" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_client_key keyText="4" />
+    <if_variable name="Aegis shuttle 4 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Aegis Shuttle 4" />
+    <if_variable name="Aegis shuttle 4 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Aegis Shuttle 4 ready" seconds="20" />
+    <set_variable name="Aegis shuttle 4 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Jones">Shuttle four is prepping for launch.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 4 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_timer_finished name="Aegis shuttle 4 ready" />
+    <if_not_exists name="Aegis shuttle 4" />
+    <if_variable name="Aegis shuttle 4 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Jones">Bridge, shuttle four is ready to go on your command.</incoming_comms_text>
+    <set_variable name="Aegis shuttle 4 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 4" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_variable name="Aegis shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="4" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Aegis shuttle 4" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Aegis shuttle 4" distance="20" angle="180.0" name1="Aegis" />
+    <clear_ai name="Aegis shuttle 4" />
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.1" name="Aegis shuttle 4" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Aegis shuttle 4" />
+    <incoming_comms_text from="Lieutenant Jones">Shuttle four has cleared hanger doors.</incoming_comms_text>
+    <set_timer name="Aegis-shuttle1-recall" seconds="2" />
+    <set_variable name="Aegis shuttle 4 ready" value="3.0" />
+    <set_variable name="Aegis shuttle 4 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 4" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_exists name="Aegis shuttle 4" />
+    <if_variable name="Aegis shuttle 4 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="4" />
+    <if_variable name="Aegis shuttle 4 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <clear_ai name="Aegis shuttle 4" />
+    <incoming_comms_text from="Lieutenant Jones">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.89" name="Aegis shuttle 4" />
+    <set_variable name="Aegis shuttle 4 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 4 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_distance name1="Aegis shuttle 4" name2="Aegis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Aegis shuttle 4 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Jones">Shuttle four coming into land.</incoming_comms_text>
+    <destroy name="Aegis shuttle 4" />
+    <set_variable name="Aegis shuttle 4 recall" value="2.0" />
+    <set_variable name="Aegis shuttle 4 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 4 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_variable name="Aegis shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Aegis shuttle 4" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <set_variable name="Aegis shuttle 4 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Jones">May... ...day, we ha... lo... a.. wer. Emer... ... out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 5" id_arme="72b28718-73ae-4d04-9d91-467f710cefdc" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_client_key keyText="5" />
+    <if_variable name="Aegis shuttle 5 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Aegis Shuttle 5" />
+    <if_variable name="Aegis shuttle 5 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Aegis Shuttle 5 ready" seconds="20" />
+    <set_variable name="Aegis shuttle 5 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Mosley">Bridge, we are bringing shuttle five online.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 5 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_timer_finished name="Aegis shuttle 5 ready" />
+    <if_not_exists name="Aegis shuttle 5" />
+    <if_variable name="Aegis shuttle 5 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Mosley">Bridge, shuttle five is ready to launch.</incoming_comms_text>
+    <set_variable name="Aegis shuttle 5 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 5" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_variable name="Aegis shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="5" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Aegis shuttle 5" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Aegis shuttle 5" distance="20" angle="180.0" name1="Aegis" />
+    <clear_ai name="Aegis shuttle 5" />
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.1" name="Aegis shuttle 5" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Aegis shuttle 5" />
+    <incoming_comms_text from="Lieutenant Mosley">Shuttle five is away.</incoming_comms_text>
+    <set_timer name="Aegis-shuttle1-recall" seconds="2" />
+    <set_variable name="Aegis shuttle 5 ready" value="3.0" />
+    <set_variable name="Aegis shuttle 5 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 5" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_exists name="Aegis shuttle 5" />
+    <if_variable name="Aegis shuttle 5 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="5" />
+    <if_variable name="Aegis shuttle 5 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <clear_ai name="Aegis shuttle 5" />
+    <incoming_comms_text from="Lieutenant Mosley">On our way back to the ship..</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Aegis" value1="0.89" name="Aegis shuttle 5" />
+    <set_variable name="Aegis shuttle 5 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 5 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_exists name="Aegis" />
+    <if_distance name1="Aegis shuttle 5" name2="Aegis" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Aegis shuttle 5 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Mosley">Bridge, we're back on the ship.</incoming_comms_text>
+    <destroy name="Aegis shuttle 5" />
+    <set_variable name="Aegis shuttle 5 recall" value="2.0" />
+    <set_variable name="Aegis shuttle 5 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 5 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="f7f7354a-286e-444e-aa40-56a821563098">
+    <if_variable name="Aegis shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Aegis shuttle 5" />
+    <if_timer_finished name="Aegis-shuttle1-recall" />
+    <set_variable name="Aegis shuttle 5 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Mosley">Brid... we... ...en dama.. Requ.... emerge... .eam out.. *signal lost*</incoming_comms_text>
+  </event>
+  <folder_arme name_arme="Horatio Shuttles" id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3" parent_id_arme="a109da74-42ce-43d9-9140-0670fa9b822a" expanded_arme="" />
+  <event name_arme="Ready Shuttle 1" id_arme="f3b9674b-399a-4ebe-922a-eb09125b8ee7" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_client_key keyText="1" />
+    <if_variable name="Horatio shuttle 1 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Horatio Shuttle 1" />
+    <if_variable name="Horatio shuttle 1 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Horatio Shuttle 1 ready" seconds="20" />
+    <set_variable name="Horatio shuttle 1 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Dorjee">Shuttle one coming online.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 1 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_timer_finished name="Horatio shuttle 1 ready" />
+    <if_not_exists name="Horatio shuttle 1" />
+    <if_variable name="Horatio shuttle 1 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Dorjee">Shuttle one is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Horatio shuttle 1 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 1" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_variable name="Horatio shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="1" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Horatio shuttle 1" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Horatio shuttle 1" distance="20" angle="180.0" name1="Horatio" />
+    <clear_ai name="Horatio shuttle 1" />
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.1" name="Horatio shuttle 1" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Horatio shuttle 1" />
+    <incoming_comms_text from="Lieutenant Dorjee">Launching Shuttle one!</incoming_comms_text>
+    <set_timer name="Horatio-shuttle1-recall" seconds="2" />
+    <set_variable name="Horatio shuttle 1 ready" value="3.0" />
+    <set_variable name="Horatio shuttle 1 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 1" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_exists name="Horatio shuttle 1" />
+    <if_variable name="Horatio shuttle 1 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="1" />
+    <if_variable name="Horatio shuttle 1 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <clear_ai name="Horatio shuttle 1" />
+    <incoming_comms_text from="Lieutenant Dorjee">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.89" name="Horatio shuttle 1" />
+    <set_variable name="Horatio shuttle 1 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 1 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_distance name1="Horatio shuttle 1" name2="Horatio" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Horatio shuttle 1 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Dorjee">Shuttle one coming into land.</incoming_comms_text>
+    <destroy name="Horatio shuttle 1" />
+    <set_variable name="Horatio shuttle 1 recall" value="2.0" />
+    <set_variable name="Horatio shuttle 1 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 1 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_variable name="Horatio shuttle 1 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Horatio shuttle 1" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <set_variable name="Horatio shuttle 1 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Dorjee">Bri... We have ta.... ...age! Sys.... offline, requ... ...gency beam o... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 2" id_arme="be84e9bf-93e5-484b-8dce-4d0df9fbe465" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_client_key keyText="P" />
+    <if_variable name="Horatio shuttle 2 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Horatio Shuttle 2" />
+    <if_variable name="Horatio shuttle 2 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Horatio Shuttle 2 ready" seconds="20" />
+    <set_variable name="Horatio shuttle 2 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Muirhead">Bridge, shuttle two is prepping for launch.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 2 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_timer_finished name="Horatio shuttle 2 ready" />
+    <if_not_exists name="Horatio shuttle 2" />
+    <if_variable name="Horatio shuttle 2 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Muirhead">Shuttle two is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Horatio shuttle 2 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 2" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_variable name="Horatio shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="2" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Horatio shuttle 2" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Horatio shuttle 2" distance="20" angle="180.0" name1="Horatio" />
+    <clear_ai name="Horatio shuttle 2" />
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.1" name="Horatio shuttle 2" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Horatio shuttle 2" />
+    <incoming_comms_text from="Lieutenant Muirhead">Shuttle two away!</incoming_comms_text>
+    <set_timer name="Horatio-shuttle1-recall" seconds="2" />
+    <set_variable name="Horatio shuttle 2 ready" value="3.0" />
+    <set_variable name="Horatio shuttle 2 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 2" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_exists name="Horatio shuttle 2" />
+    <if_variable name="Horatio shuttle 2 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="2" />
+    <if_variable name="Horatio shuttle 2 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <clear_ai name="Horatio shuttle 2" />
+    <incoming_comms_text from="Lieutenant Muirhead">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.89" name="Horatio shuttle 2" />
+    <set_variable name="Horatio shuttle 2 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 2 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_distance name1="Horatio shuttle 2" name2="Horatio" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Horatio shuttle 2 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Muirhead">Shuttle two approaching hanger bay.</incoming_comms_text>
+    <destroy name="Horatio shuttle 2" />
+    <set_variable name="Horatio shuttle 2 recall" value="2.0" />
+    <set_variable name="Horatio shuttle 2 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 2 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_variable name="Horatio shuttle 2 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Horatio shuttle 2" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <set_variable name="Horatio shuttle 2 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Muirhead">He... We a.. ..king he... dama.. reqe.... ...iate trans.... *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 3" id_arme="b64d5f56-3a69-4e26-a3c1-0a2b7e89ee34" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_client_key keyText="3" />
+    <if_variable name="Horatio shuttle 3 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Horatio Shuttle 3" />
+    <if_variable name="Horatio shuttle 3 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Horatio Shuttle 3 ready" seconds="20" />
+    <set_variable name="Horatio shuttle 3 ready" value="1.0" />
+    <incoming_comms_text from="Ensign Kerrod">Shuttle three is being prepped for launch.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 3 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_timer_finished name="Horatio shuttle 3 ready" />
+    <if_not_exists name="Horatio shuttle 3" />
+    <if_variable name="Horatio shuttle 3 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Kerrod">Shuttle three is ready to launch Bridge.</incoming_comms_text>
+    <set_variable name="Horatio shuttle 3 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 3" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_variable name="Horatio shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="3" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Horatio shuttle 3" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Horatio shuttle 3" distance="20" angle="180.0" name1="Horatio" />
+    <clear_ai name="Horatio shuttle 3" />
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.1" name="Horatio shuttle 3" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Horatio shuttle 3" />
+    <incoming_comms_text from="Ensign Kerrod">Shuttle three away!</incoming_comms_text>
+    <set_timer name="Horatio-shuttle1-recall" seconds="2" />
+    <set_variable name="Horatio shuttle 3 ready" value="3.0" />
+    <set_variable name="Horatio shuttle 3 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 3" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_exists name="Horatio shuttle 3" />
+    <if_variable name="Horatio shuttle 3 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="3" />
+    <if_variable name="Horatio shuttle 3 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <clear_ai name="Horatio shuttle 3" />
+    <incoming_comms_text from="Ensign Kerrod">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.89" name="Horatio shuttle 3" />
+    <set_variable name="Horatio shuttle 3 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 3 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_distance name1="Horatio shuttle 3" name2="Horatio" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Horatio shuttle 3 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Kerrod">Bridge, we've landed..</incoming_comms_text>
+    <destroy name="Horatio shuttle 3" />
+    <set_variable name="Horatio shuttle 3 recall" value="2.0" />
+    <set_variable name="Horatio shuttle 3 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 3 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_variable name="Horatio shuttle 3 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Horatio shuttle 3" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <set_variable name="Horatio shuttle 3 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign Kerrod">Sys.... off.... we hav.. .. power. Lie.. supp... fail... ple... ...am .. out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 4" id_arme="13576dfe-0d7c-4d38-b931-4fac3385fbde" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_client_key keyText="4" />
+    <if_variable name="Horatio shuttle 4 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Horatio Shuttle 4" />
+    <if_variable name="Horatio shuttle 4 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Horatio Shuttle 4 ready" seconds="20" />
+    <set_variable name="Horatio shuttle 4 ready" value="1.0" />
+    <incoming_comms_text from="Lieutenant Okunda">Bridge, shuttle four prepping for launch.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 4 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_timer_finished name="Horatio shuttle 4 ready" />
+    <if_not_exists name="Horatio shuttle 4" />
+    <if_variable name="Horatio shuttle 4 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Okunda">Bridge, shuttle four is ready to go on your command.</incoming_comms_text>
+    <set_variable name="Horatio shuttle 4 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 4" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_variable name="Horatio shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="4" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Horatio shuttle 4" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Horatio shuttle 4" distance="20" angle="180.0" name1="Horatio" />
+    <clear_ai name="Horatio shuttle 4" />
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.1" name="Horatio shuttle 4" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Horatio shuttle 4" />
+    <incoming_comms_text from="Lieutenant Okunda">Shuttle four has cleared hanger doors.</incoming_comms_text>
+    <set_timer name="Horatio-shuttle1-recall" seconds="2" />
+    <set_variable name="Horatio shuttle 4 ready" value="3.0" />
+    <set_variable name="Horatio shuttle 4 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 4" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_exists name="Horatio shuttle 4" />
+    <if_variable name="Horatio shuttle 4 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="4" />
+    <if_variable name="Horatio shuttle 4 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <clear_ai name="Horatio shuttle 4" />
+    <incoming_comms_text from="Lieutenant Okunda">Aye, returning to the ship. Prepare for docking.</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.89" name="Horatio shuttle 4" />
+    <set_variable name="Horatio shuttle 4 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 4 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_distance name1="Horatio shuttle 4" name2="Horatio" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Horatio shuttle 4 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Lieutenant Okunda">Shuttle four coming into land.</incoming_comms_text>
+    <destroy name="Horatio shuttle 4" />
+    <set_variable name="Horatio shuttle 4 recall" value="2.0" />
+    <set_variable name="Horatio shuttle 4 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 4 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_variable name="Horatio shuttle 4 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Horatio shuttle 4" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <set_variable name="Horatio shuttle 4 destroyed" value="1.0" />
+    <incoming_comms_text from="Lieutenant Okunda">May... ...day, we ha... lo... a.. wer. Emer... ... out. *signal lost*</incoming_comms_text>
+  </event>
+  <event name_arme="Ready Shuttle 5" id_arme="0bc18bc1-1753-46c9-b252-9cecf09b4009" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_client_key keyText="5" />
+    <if_variable name="Horatio shuttle 5 ready" comparator="LESS" value="1.0" />
+    <if_not_exists name="Horatio Shuttle 5" />
+    <if_variable name="Horatio shuttle 5 destroyed" comparator="EQUALS" value="0.0" />
+    <set_timer name="Horatio Shuttle 5 ready" seconds="20" />
+    <set_variable name="Horatio shuttle 5 ready" value="1.0" />
+    <incoming_comms_text from="Ensign Bizony">Bridge, shuttle five is being prepared to launch on your command.</incoming_comms_text>
+  </event>
+  <event name_arme="shuttle 5 prepped" id_arme="aca5e02d-789c-4b1f-b968-1ecce9ab0ef9" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_timer_finished name="Horatio shuttle 5 ready" />
+    <if_not_exists name="Horatio shuttle 5" />
+    <if_variable name="Horatio shuttle 5 ready" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Bizony">Bridge, shuttle five is ready to launch.</incoming_comms_text>
+    <set_variable name="Horatio shuttle 5 ready" value="2.0" />
+  </event>
+  <event name_arme="Launch shuttle 5" id_arme="1a7e1f8b-1cb3-464f-9bee-038555e7723c" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_variable name="Horatio shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_client_key keyText="5" />
+    <create type="neutral" x="0.0" y="0.0" z="0.0" angle="0.0" name="Horatio shuttle 5" hullID="1520" sideValue="2" />
+    <set_relative_position name2="Horatio shuttle 5" distance="20" angle="180.0" name1="Horatio" />
+    <clear_ai name="Horatio shuttle 5" />
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.1" name="Horatio shuttle 5" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="Horatio shuttle 5" />
+    <incoming_comms_text from="Ensign Bizony">Shuttle five is away.</incoming_comms_text>
+    <set_timer name="Horatio-shuttle1-recall" seconds="2" />
+    <set_variable name="Horatio shuttle 5 ready" value="3.0" />
+    <set_variable name="Horatio shuttle 5 recall" value="0.0" />
+  </event>
+  <event name_arme="Recall shuttle 5" id_arme="41913b17-507b-440f-bd53-f680c5b58634" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_exists name="Horatio shuttle 5" />
+    <if_variable name="Horatio shuttle 5 ready" comparator="EQUALS" value="3.0" />
+    <if_client_key keyText="5" />
+    <if_variable name="Horatio shuttle 5 recall" comparator="LESS" value="1.0" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <clear_ai name="Horatio shuttle 5" />
+    <incoming_comms_text from="Ensign Bizony">On our way back to the ship..</incoming_comms_text>
+    <add_ai type="TARGET_THROTTLE" targetName="Horatio" value1="0.89" name="Horatio shuttle 5" />
+    <set_variable name="Horatio shuttle 5 recall" value="1.0" />
+  </event>
+  <event name_arme="shuttle 5 dock" id_arme="4248be99-7472-446c-b1a8-4174e6780626" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_exists name="Horatio" />
+    <if_distance name1="Horatio shuttle 5" name2="Horatio" comparator="LESS_EQUAL" value="522.0" />
+    <if_variable name="Horatio shuttle 5 recall" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Ensign Bizony">Bridge, we're back on the ship.</incoming_comms_text>
+    <destroy name="Horatio shuttle 5" />
+    <set_variable name="Horatio shuttle 5 recall" value="2.0" />
+    <set_variable name="Horatio shuttle 5 ready" value="0.0" />
+  </event>
+  <event name_arme="shuttle 5 destroyed" id_arme="2d60abb0-0f1d-4e73-aed5-ecadd39caae2" parent_id_arme="6789150d-4dc5-4ef5-9164-be9b20ccc3d3">
+    <if_variable name="Horatio shuttle 5 ready" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Horatio shuttle 5" />
+    <if_timer_finished name="Horatio-shuttle1-recall" />
+    <set_variable name="Horatio shuttle 5 destroyed" value="1.0" />
+    <incoming_comms_text from="Ensign Bizony">Brid... we... ...en dama.. Requ.... emerge... .eam out.. *signal lost*</incoming_comms_text>
+  </event>
+  <!--End of custom scripts-->
